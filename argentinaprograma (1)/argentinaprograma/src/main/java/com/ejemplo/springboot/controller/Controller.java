@@ -12,10 +12,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/acercade")
 @CrossOrigin(origins="http://localhost:4200")
 public class Controller {
     
@@ -24,8 +26,9 @@ public class Controller {
     private IPersonaService persoServ;
     
     @PostMapping("/new/persona")
-    public void agregarPersona(@RequestBody Persona pers){
+    public String agregarPersona(@RequestBody Persona pers){
         persoServ.crearPersona(pers);
+        return "La persona fue creada correctamente!";
     }
     
     @GetMapping("/ver/personas")
@@ -35,34 +38,14 @@ public class Controller {
     }
     
     @DeleteMapping("/delete/{id}")
-    public void borrarPersona(@PathVariable Long id){
+    public String borrarPersona(@PathVariable Long id){
         persoServ.borrarPersona(id);
+        return "La persona fue eliminada correctamente";
     }
     
-  
-    
-    /*//creacion de la lista
-    List<Persona> listaPersonas = new ArrayList();
-    
-    
-    @GetMapping("/hola/{nombre}/{apellido}/{edad}") // cuando alguien entre a la app/hola se va a disparar
-    public String decirHola(@PathVariable String nombre,
-                            @PathVariable String apellido,
-                            @PathVariable int edad){
-        return "Hola Mundo "+ nombre + " apellido: " + apellido + " edad: " + edad ;
-    }
-    // si no se les dice nada lo que asumen todos los navegadores es que hay que usar Get
-    // para hacer post hay que hacer cosas ----> postman
-    
-    @GetMapping("/chau")
-    public String decirChau (@RequestParam String nombre,
-                             @RequestParam String apellido,
-                             @RequestParam int edad){
-        return "Chau Mundo " + nombre + edad + apellido;
+    @GetMapping("/perfil/{id}")
+    public Persona buscarPersona(@PathVariable Long id){
+        return persoServ.buscarPersona(id);
     }
     
-    // con request param es mas facil para no tener que poner /asas/asadas/dfgdf
-    
-    //el post lo vamos a usar para dar altas, o agregar elementos dentro de una lista
-    */
 }
