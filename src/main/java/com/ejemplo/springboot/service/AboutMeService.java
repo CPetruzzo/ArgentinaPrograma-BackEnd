@@ -1,26 +1,26 @@
 
 package com.ejemplo.springboot.service;
 
-import com.ejemplo.springboot.model.Persona;
-import com.ejemplo.springboot.repository.PersonaRepository;
+import com.ejemplo.springboot.entity.AboutMe;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.ejemplo.springboot.repository.AboutMeRepository;
 
 @Service
-public class PersonaService implements IPersonaService{
+public class AboutMeService implements IAboutMeService{
 
     //hay que hacer una inyeccion de dependencias de el respositorio/conexion con jpa 
     @Autowired
-    public PersonaRepository persRepo;
+    public AboutMeRepository persRepo;
     
     @Override
-    public List<Persona> verPersonas() {
+    public List<AboutMe> verPersonas() {
         return persRepo.findAll();
     }
 
     @Override
-    public void crearPersona(Persona pers) {
+    public void crearPersona(AboutMe pers) {
         persRepo.save(pers);
     }
 
@@ -30,9 +30,13 @@ public class PersonaService implements IPersonaService{
     }
 
     @Override
-    public Persona buscarPersona(Long id) {
+    public AboutMe buscarPersona(Long id) {
         return persRepo.findById(id).orElse(null);
     }
     
+    @Override 
+    public void cambiarPersona(AboutMe pers) {
+        persRepo.save(pers);
+    }
     
 }

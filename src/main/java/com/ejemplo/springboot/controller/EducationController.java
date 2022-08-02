@@ -2,8 +2,7 @@
 package com.ejemplo.springboot.controller;
 
 // esto va a ser el pivot
-import com.ejemplo.springboot.model.Persona;
-import com.ejemplo.springboot.service.IPersonaService;
+import com.ejemplo.springboot.entity.Education;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -15,37 +14,38 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import com.ejemplo.springboot.service.IEducationService;
 
 @RestController
-@RequestMapping("/acercade")
+@RequestMapping("/educacion")
 @CrossOrigin(origins="http://localhost:4200")
-public class Controller {
+public class EducationController {
     
     
     @Autowired
-    private IPersonaService persoServ;
+    private IEducationService persoServ;
     
-    @PostMapping("/new/persona")
-    public String agregarPersona(@RequestBody Persona pers){
-        persoServ.crearPersona(pers);
-        return "La persona fue creada correctamente!";
+    @PostMapping("/new/educacion")
+    public String agregarEducacion(@RequestBody Education pers){
+        persoServ.crearEducacion(pers);
+        return "La educacion fue creada correctamente!";
     }
     
-    @GetMapping("/ver/personas")
+    @GetMapping("/ver/educacion")
     @ResponseBody // devolvelo en el cuerpo de la respuesta
-    public List<Persona> verPersonas(){
-        return persoServ.verPersonas();
+    public List<Education> verEducacion(){
+        return persoServ.verEducacion();
     }
     
     @DeleteMapping("/delete/{id}")
-    public String borrarPersona(@PathVariable Long id){
-        persoServ.borrarPersona(id);
-        return "La persona fue eliminada correctamente";
+    public String borrarEducacion(@PathVariable int id){
+        persoServ.borrarEducacion(id);
+        return "La educacion fue eliminada correctamente";
     }
     
-    @GetMapping("/perfil/{id}")
-    public Persona buscarPersona(@PathVariable Long id){
-        return persoServ.buscarPersona(id);
+    @GetMapping("/educacion/{id}")
+    public Education buscarEducacion(@PathVariable int id){
+        return persoServ.buscarEducacion(id);
     }
     
 }

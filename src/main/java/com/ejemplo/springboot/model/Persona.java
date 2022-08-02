@@ -1,5 +1,5 @@
 
-package com.ejemplo.springboot.entity;
+package com.ejemplo.springboot.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,18 +13,21 @@ import lombok.Setter;
 @Getter @Setter
 @Entity
 
-public class AboutMe {
+public class Persona {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String descripcion;
+    private String nombre;
+    private String apellido;
     
-    public AboutMe(){
+    public Persona(){
     }
 
-    public AboutMe(String descripcion) {
-        this.descripcion = descripcion;
+    public Persona(Long id, String nombre, String apellido) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
     }
      
     
