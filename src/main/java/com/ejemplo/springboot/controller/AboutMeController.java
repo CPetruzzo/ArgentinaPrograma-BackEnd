@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.ejemplo.springboot.service.IAboutMeService;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -26,23 +27,11 @@ public class AboutMeController {
     
     @Autowired
     private IAboutMeService aboutmeServ;
-    
-    @PostMapping("new/persona")
-    public String agregarPersona(@RequestBody AboutMe pers){
-        aboutmeServ.crearPersona(pers);
-        return "La persona fue creada correctamente!";
-    }
-    
+        
     @GetMapping("ver/personas")
     @ResponseBody // devolvelo en el cuerpo de la respuesta
     public List<AboutMe> verPersonas(){
         return aboutmeServ.verPersonas();
-    }
-    
-    @DeleteMapping("delete/{id}")
-    public String borrarPersona(@PathVariable Long id){
-        aboutmeServ.borrarPersona(id);
-        return "La persona "+ id +" fue eliminada correctamente";
     }
     
     @GetMapping("perfil/{id}")
@@ -50,6 +39,21 @@ public class AboutMeController {
         return aboutmeServ.buscarPersona(id);
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
+    @PostMapping("new/persona")
+    public String agregarPersona(@RequestBody AboutMe pers){
+        aboutmeServ.crearPersona(pers);
+        return "La persona fue creada correctamente!";
+    }
+
+    @PreAuthorize("hasRole('ADMIN')")
+    @DeleteMapping("delete/{id}")
+    public String borrarPersona(@PathVariable Long id){
+        aboutmeServ.borrarPersona(id);
+        return "La persona "+ id +" fue eliminada correctamente";
+    }
+
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("modificar/{id}")
     public AboutMe modificarPersona(@PathVariable Long id,
                                     @RequestParam ("descripcion") String nuevaDescripcion){    

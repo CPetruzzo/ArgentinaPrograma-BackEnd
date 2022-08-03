@@ -5,6 +5,7 @@ import com.ejemplo.springboot.entity.Info;
 import com.ejemplo.springboot.service.InfoService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,12 +30,14 @@ public class InfoController {
         return infoServ.getInfo();
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("createInfo/")
     public String createInfo(@RequestBody Info informacion){
         infoServ.saveInfo(informacion);
         return "La persona fue creada correctamente";
     }
-    
+
+    @PreAuthorize("hasRole('ADMIN')")   
     @DeleteMapping("borrar/{id}/")
     public String borrarInfo(@PathVariable Long id){
         infoServ.deleteInfo(id);
@@ -42,6 +45,7 @@ public class InfoController {
     }
     
     // URL: PUERTO/editar/4/nombre&apellido&img
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("editar/{id}")
     public Info editarInfo(@PathVariable Long id, 
                             @RequestParam("nombre") String nuevoNombre,
