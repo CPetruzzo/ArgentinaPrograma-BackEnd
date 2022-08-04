@@ -44,8 +44,8 @@ public class ExperienciaController {
                 dtoExp.getCargo(), 
                 dtoExp.getLugar(),
                 dtoExp.getDescripcion(), 
-                dtoExp.getF_fin(), 
-                dtoExp.getF_inicio()); 
+                dtoExp.getFecha_fin(), 
+                dtoExp.getFecha_inicio()); 
         servExp.save(experiencia);
         
         return new ResponseEntity(new Mensaje("Experiencia agregada"), HttpStatus.OK);
@@ -69,8 +69,8 @@ public class ExperienciaController {
         experiencia.setCargo(dtoExp.getCargo());
         experiencia.setLugar(dtoExp.getLugar());
         experiencia.setDescripcion(dtoExp.getDescripcion());
-        experiencia.setF_inicio(dtoExp.getF_inicio());
-        experiencia.setF_fin(dtoExp.getF_fin());
+        experiencia.setFecha_inicio(dtoExp.getFecha_inicio());
+        experiencia.setFecha_fin(dtoExp.getFecha_fin());
         
         servExp.save(experiencia);
         return new ResponseEntity(new Mensaje("La experiencia fue actualizada con éxito"), HttpStatus.OK);

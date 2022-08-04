@@ -6,8 +6,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.ejemplo.springboot.repository.EducationRepository;
+import javax.transaction.Transactional;
 
 @Service
+@Transactional
 public class EducationService implements IEducationService{
 
     //hay que hacer una inyeccion de dependencias de el respositorio/conexion con jpa 

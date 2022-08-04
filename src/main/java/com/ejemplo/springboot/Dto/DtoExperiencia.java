@@ -16,19 +16,19 @@ public class DtoExperiencia {
     private String descripcion;
     
     @NotBlank
-    private String f_inicio;
+    private String fecha_inicio;
     
-    private String f_fin;
+    private String fecha_fin;
 
     public DtoExperiencia() {
     }
 
-    public DtoExperiencia(String cargo, String lugar, String descripcion, String f_inicio, String f_fin) {
+    public DtoExperiencia(String cargo, String lugar, String descripcion, String fecha_inicio, String fecha_fin) {
         this.cargo = cargo;
         this.lugar = lugar;
         this.descripcion = descripcion;
-        this.f_inicio = f_inicio;
-        this.f_fin = f_fin;
+        this.fecha_inicio = fecha_inicio;
+        this.fecha_fin = fecha_fin;
     }
 
     public String getCargo() {
@@ -55,21 +55,22 @@ public class DtoExperiencia {
         this.lugar = lugar;
     }
 
-    public String getF_inicio() {
-        return f_inicio;
+    public String getFecha_inicio() {
+        return fecha_inicio;
     }
 
-    public void setF_inicio(String f_inicio) {
-        this.f_inicio = f_inicio;
+    public void setFecha_inicio(String fecha_inicio) {
+        this.fecha_inicio = fecha_inicio;
     }
 
-    public String getF_fin() {
-        return f_fin;
+    public String getFecha_fin() {
+        return fecha_fin;
     }
 
-    public void setF_fin(String f_fin) {
-        this.f_fin = f_fin;
+    public void setFecha_fin(String fecha_fin) {
+        this.fecha_fin = fecha_fin;
     }
+
 
     
 }
