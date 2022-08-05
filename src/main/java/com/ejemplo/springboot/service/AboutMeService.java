@@ -14,31 +14,36 @@ public class AboutMeService implements IAboutMeService{
 
     //hay que hacer una inyeccion de dependencias de el respositorio/conexion con jpa 
     @Autowired
-    public AboutMeRepository persRepo;
+    public AboutMeRepository aboutmeRepo;
     
     @Override
     public List<AboutMe> verPersonas() {
-        return persRepo.findAll();
+        return aboutmeRepo.findAll();
     }
 
     @Override
     public void crearPersona(AboutMe pers) {
-        persRepo.save(pers);
+        aboutmeRepo.save(pers);
     }
 
     @Override
     public void borrarPersona(Long id) {
-        persRepo.deleteById(id);
+        aboutmeRepo.deleteById(id);
     }
 
     @Override
     public AboutMe buscarPersona(Long id) {
-        return persRepo.findById(id).orElse(null);
+        return aboutmeRepo.findById(id).orElse(null);
     }
     
     @Override 
     public void cambiarPersona(AboutMe pers) {
-        persRepo.save(pers);
+        aboutmeRepo.save(pers);
+    }
+    
+    @Override
+    public boolean existsById(Long id){
+        return aboutmeRepo.existsById(id);
     }
     
 }

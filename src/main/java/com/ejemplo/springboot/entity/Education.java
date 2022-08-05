@@ -17,13 +17,13 @@ public class Education {
     private int id;
     private String titulo;
     private String lugar;
-    private int fecha_inicio;
-    private int fecha_fin;
+    private String fecha_inicio;
+    private String fecha_fin;
     
     public Education(){
     }
 
-    public Education(String titulo, String lugar, int fecha_inicio, int fecha_fin) {
+    public Education(String titulo, String lugar, String fecha_inicio, String fecha_fin) {
         this.titulo = titulo;
         this.lugar = lugar;
         this.fecha_inicio = fecha_inicio;
@@ -54,23 +54,22 @@ public class Education {
         this.lugar = lugar;
     }
 
-    public int getFecha_inicio() {
+    public String getFecha_inicio() {
         return fecha_inicio;
     }
 
-    public void setFecha_inicio(int fecha_inicio) {
+    public void setFecha_inicio(String fecha_inicio) {
         this.fecha_inicio = fecha_inicio;
     }
 
-    public int getFecha_fin() {
+    public String getFecha_fin() {
         return fecha_fin;
     }
 
-    public void setFecha_fin(int fecha_fin) {
+    public void setFecha_fin(String fecha_fin) {
         this.fecha_fin = fecha_fin;
     }
 
-    
     
      
     

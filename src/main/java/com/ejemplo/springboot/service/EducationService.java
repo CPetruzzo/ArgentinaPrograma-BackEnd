@@ -36,5 +36,9 @@ public class EducationService implements IEducationService{
         return persRepo.findById(id).orElse(null);
     }
     
+    @Override
+    public void modificarEducacion(Education pers){
+        persRepo.save(pers);
+    }
     
 }

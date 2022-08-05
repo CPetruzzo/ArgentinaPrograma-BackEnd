@@ -14,5 +14,7 @@ public interface IEducationService {
     
     public Education buscarEducacion(int id); 
     
+    public void modificarEducacion(Education pers);
+    
     
 }

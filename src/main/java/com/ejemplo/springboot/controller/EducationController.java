@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.ejemplo.springboot.service.IEducationService;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 @RequestMapping("/educacion")
@@ -48,4 +50,20 @@ public class EducationController {
         return persoServ.buscarEducacion(id);
     }
     
+    @PutMapping("/modificar/{id}")
+    public Education modificarPersona(@PathVariable int id,
+                                    @RequestParam String titulo,
+    @RequestParam String lugar, @RequestParam String fecha_inicio, @RequestParam String fecha_fin){    
+        
+        Education education  = persoServ.buscarEducacion(id);
+
+        education.setTitulo(titulo);
+        education.setLugar(lugar);
+        education.setFecha_inicio(fecha_inicio);
+        education.setFecha_fin(fecha_fin);
+        
+        persoServ.modificarEducacion(education);
+        return education;
+    }
+            
 }

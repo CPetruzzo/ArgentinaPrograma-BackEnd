@@ -5,7 +5,7 @@ import com.ejemplo.springboot.entity.AboutMe;
 import java.util.List;
 
 public interface IAboutMeService {
-    // no se implementan porque es solo una interfaz
+    
     public List<AboutMe> verPersonas();
     
     public void crearPersona(AboutMe pers);
@@ -15,4 +15,6 @@ public interface IAboutMeService {
     public AboutMe buscarPersona(Long id); 
     
     public void cambiarPersona(AboutMe pers);
+    
+    public boolean existsById(Long id);
 }
