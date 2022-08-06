@@ -11,11 +11,15 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/proyecto")
 @CrossOrigin(origins="http://localhost:4200")
 public class Controller {
     
@@ -23,12 +27,12 @@ public class Controller {
     @Autowired
     private IPersonaService persoServ;
     
-    @PostMapping("/new/persona")
+    @PostMapping("/new")
     public void agregarPersona(@RequestBody Persona pers){
         persoServ.crearPersona(pers);
     }
     
-    @GetMapping("/ver/personas")
+    @GetMapping("/ver/proyectos")
     @ResponseBody // devolvelo en el cuerpo de la respuesta
     public List<Persona> verPersonas(){
         return persoServ.verPersonas();
@@ -37,6 +41,21 @@ public class Controller {
     @DeleteMapping("/delete/{id}")
     public void borrarPersona(@PathVariable Long id){
         persoServ.borrarPersona(id);
+    }
+    
+    @PutMapping("/edit/{id}")
+    public Persona editarPersona(@PathVariable Long id ,
+                                 @RequestParam String proyecto,
+                                 @RequestParam String descripcion,
+                                 @RequestParam String url){
+        Persona proy = persoServ.buscarPersona(id);
+        
+        proy.setNombre(proyecto);
+        proy.setDescripcion(descripcion);
+        proy.setUrl(url);
+        
+        persoServ.crearPersona(proy);
+        return proy;
     }
     
   

@@ -5,12 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import lombok.Getter;
-import lombok.Setter;
+
 // con lombok no necesito poner todos los getter y setters de todas las cosas
 // nos ahorra una baaaanda de codigo y tiempo
 
-@Getter @Setter
 @Entity
 
 public class Persona {
@@ -19,17 +17,50 @@ public class Persona {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String nombre;
-    private String apellido;
+    private String descripcion;
+    private String url;
     
     public Persona(){
     }
 
-    public Persona(Long id, String nombre, String apellido) {
+    public Persona(Long id, String nombre, String descripcion, String url) {
         this.id = id;
         this.nombre = nombre;
-        this.apellido = apellido;
+        this.descripcion = descripcion;
+        this.url = url;
     }
-     
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
     
     
 }

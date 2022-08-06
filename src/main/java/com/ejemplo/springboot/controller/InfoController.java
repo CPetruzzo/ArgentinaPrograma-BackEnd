@@ -36,6 +36,11 @@ public class InfoController {
         infoServ.saveInfo(informacion);
         return "La persona fue creada correctamente";
     }
+    
+    @GetMapping("getInfo/{id}")
+    public Info buscarInfo(@PathVariable Long id){
+        return infoServ.findInfo(id);
+    }
 
     @PreAuthorize("hasRole('ADMIN')")   
     @DeleteMapping("borrar/{id}/")
