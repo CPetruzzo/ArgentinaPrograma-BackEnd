@@ -45,12 +45,12 @@ public class Controller {
     
     @PutMapping("/edit/{id}")
     public Persona editarPersona(@PathVariable Long id ,
-                                 @RequestParam String proyecto,
+                                 @RequestParam String nombre,
                                  @RequestParam String descripcion,
                                  @RequestParam String url){
         Persona proy = persoServ.buscarPersona(id);
         
-        proy.setNombre(proyecto);
+        proy.setNombre(nombre);
         proy.setDescripcion(descripcion);
         proy.setUrl(url);
         
