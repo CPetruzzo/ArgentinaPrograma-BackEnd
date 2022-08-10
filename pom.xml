@@ -8,7 +8,7 @@
         <version>2.6.7</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-   <groupId>com.app</groupId>
+    <groupId>com.app</groupId>
     <artifactId>portfolio</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Argentina Programa Backend</name>
@@ -16,6 +16,7 @@
     <properties>
         <java.version>8</java.version>
     </properties>
+    
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -51,7 +52,6 @@
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-jpa</artifactId>
             <type>jar</type>
-            <version>2.7.2</version>
         </dependency>
         
         <dependency>
