@@ -1,7 +1,7 @@
 
-package com.ejemplo.springboot.service;
+package com.app.portfolio.service;
 
-import com.ejemplo.springboot.entity.Skills;
+import com.app.portfolio.entity.Skills;
 import java.util.List;
 
 public interface ISkillsService {

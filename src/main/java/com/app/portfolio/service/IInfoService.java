@@ -1,7 +1,7 @@
 
-package com.ejemplo.springboot.service;
+package com.app.portfolio.service;
 
-import com.ejemplo.springboot.entity.Info;
+import com.app.portfolio.entity.Info;
 import java.util.List;
 
 public interface IInfoService {

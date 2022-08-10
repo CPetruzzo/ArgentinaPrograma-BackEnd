@@ -1,7 +1,7 @@
 
-package com.ejemplo.springboot.service;
+package com.app.portfolio.service;
 
-import com.ejemplo.springboot.model.Persona;
+import com.app.portfolio.entity.Persona;
 import java.util.List;
 
 public interface IPersonaService {

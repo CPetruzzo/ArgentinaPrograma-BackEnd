@@ -1,8 +1,8 @@
 
-package com.ejemplo.springboot.controller;
+package com.app.portfolio.controller;
 
-import com.ejemplo.springboot.entity.Info;
-import com.ejemplo.springboot.service.InfoService;
+import com.app.portfolio.entity.Info;
+import com.app.portfolio.service.InfoService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;

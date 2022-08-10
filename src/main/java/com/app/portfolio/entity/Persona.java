@@ -1,13 +1,10 @@
 
-package com.ejemplo.springboot.model;
+package com.app.portfolio.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
-// con lombok no necesito poner todos los getter y setters de todas las cosas
-// nos ahorra una baaaanda de codigo y tiempo
 
 @Entity
 

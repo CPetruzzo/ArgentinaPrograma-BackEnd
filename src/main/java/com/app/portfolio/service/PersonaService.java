@@ -1,8 +1,8 @@
 
-package com.ejemplo.springboot.service;
+package com.app.portfolio.service;
 
-import com.ejemplo.springboot.model.Persona;
-import com.ejemplo.springboot.repository.PersonaRepository;
+import com.app.portfolio.entity.Persona;
+import com.app.portfolio.repository.PersonaRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,8 +1,8 @@
 //
-package com.ejemplo.springboot.service;
+package com.app.portfolio.service;
 
-import com.ejemplo.springboot.entity.Info;
-import com.ejemplo.springboot.repository.InfoRepository;
+import com.app.portfolio.entity.Info;
+import com.app.portfolio.repository.InfoRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

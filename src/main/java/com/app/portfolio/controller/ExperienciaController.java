@@ -1,10 +1,10 @@
 
-package com.ejemplo.springboot.controller;
+package com.app.portfolio.controller;
 
-import com.ejemplo.springboot.Dto.DtoExperiencia;
-import com.ejemplo.springboot.entity.Experiencia;
-import com.ejemplo.springboot.security.controller.Mensaje;
-import com.ejemplo.springboot.service.ExperienciaService;
+import com.app.portfolio.Dto.DtoExperiencia;
+import com.app.portfolio.entity.Experiencia;
+import com.app.portfolio.security.controller.Mensaje;
+import com.app.portfolio.service.ExperienciaService;
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;

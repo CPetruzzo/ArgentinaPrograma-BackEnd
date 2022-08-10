@@ -1,5 +1,5 @@
 
-package com.ejemplo.springboot.Dto;
+package com.app.portfolio.Dto;
 
 import javax.validation.constraints.NotBlank;
 

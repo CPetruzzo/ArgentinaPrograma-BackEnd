@@ -1,4 +1,4 @@
-package com.ejemplo.springboot.entity;
+package com.app.portfolio.entity;
 
 
 import javax.persistence.Entity;

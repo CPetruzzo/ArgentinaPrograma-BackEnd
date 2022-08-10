@@ -1,7 +1,7 @@
 
-package com.ejemplo.springboot.service;
+package com.app.portfolio.service;
 
-import com.ejemplo.springboot.entity.Experiencia;
+import com.app.portfolio.entity.Experiencia;
 import java.util.List;
 import java.util.Optional;
 

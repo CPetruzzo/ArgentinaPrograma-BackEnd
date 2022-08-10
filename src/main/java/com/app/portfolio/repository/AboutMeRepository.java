@@ -1,7 +1,7 @@
 
-package com.ejemplo.springboot.repository;
+package com.app.portfolio.repository;
 
-import com.ejemplo.springboot.entity.AboutMe;
+import com.app.portfolio.entity.AboutMe;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

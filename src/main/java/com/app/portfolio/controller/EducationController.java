@@ -1,8 +1,8 @@
 
-package com.ejemplo.springboot.controller;
+package com.app.portfolio.controller;
 
 // esto va a ser el pivot
-import com.ejemplo.springboot.entity.Education;
+import com.app.portfolio.entity.Education;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import com.ejemplo.springboot.service.IEducationService;
+import com.app.portfolio.service.IEducationService;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 

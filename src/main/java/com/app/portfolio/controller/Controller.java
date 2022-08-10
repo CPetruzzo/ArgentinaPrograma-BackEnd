@@ -1,9 +1,9 @@
 
-package com.ejemplo.springboot.controller;
+package com.app.portfolio.controller;
 
 // esto va a ser el pivot
-import com.ejemplo.springboot.model.Persona;
-import com.ejemplo.springboot.service.IPersonaService;
+import com.app.portfolio.entity.Persona;
+import com.app.portfolio.service.IPersonaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;

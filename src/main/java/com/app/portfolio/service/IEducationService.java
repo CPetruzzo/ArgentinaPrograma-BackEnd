@@ -1,7 +1,7 @@
 
-package com.ejemplo.springboot.service;
+package com.app.portfolio.service;
 
-import com.ejemplo.springboot.entity.Education;
+import com.app.portfolio.entity.Education;
 import java.util.List;
 
 public interface IEducationService {

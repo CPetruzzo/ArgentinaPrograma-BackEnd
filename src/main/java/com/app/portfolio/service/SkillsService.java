@@ -1,8 +1,8 @@
 
-package com.ejemplo.springboot.service;
+package com.app.portfolio.service;
 
-import com.ejemplo.springboot.entity.Skills;
-import com.ejemplo.springboot.repository.SkillsRepository;
+import com.app.portfolio.entity.Skills;
+import com.app.portfolio.repository.SkillsRepository;
 import java.util.List;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,8 +1,8 @@
 
-package com.ejemplo.springboot.controller;
+package com.app.portfolio.controller;
 
-import com.ejemplo.springboot.entity.Skills;
-import com.ejemplo.springboot.service.ISkillsService;
+import com.app.portfolio.entity.Skills;
+import com.app.portfolio.service.ISkillsService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;

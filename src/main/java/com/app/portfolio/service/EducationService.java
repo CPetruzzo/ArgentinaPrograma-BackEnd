@@ -1,11 +1,11 @@
 
-package com.ejemplo.springboot.service;
+package com.app.portfolio.service;
 
-import com.ejemplo.springboot.entity.Education;
+import com.app.portfolio.entity.Education;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.ejemplo.springboot.repository.EducationRepository;
+import com.app.portfolio.repository.EducationRepository;
 import javax.transaction.Transactional;
 
 @Service

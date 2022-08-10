@@ -1,7 +1,7 @@
 
-package com.ejemplo.springboot.service;
+package com.app.portfolio.service;
 
-import com.ejemplo.springboot.entity.AboutMe;
+import com.app.portfolio.entity.AboutMe;
 import java.util.List;
 
 public interface IAboutMeService {
