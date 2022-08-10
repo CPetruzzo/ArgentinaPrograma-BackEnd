@@ -1,16 +1,18 @@
 
 package com.app.portfolio.service;
 
-import com.app.portfolio.entity.Persona;
+import com.app.portfolio.controller.model.Persona;
 import java.util.List;
 
 public interface IPersonaService {
-    // no se implementan porque es solo una interfaz
+    //Persona: Carga header y aboutMe en el Front
     public List<Persona> verPersonas();
     
-    public void crearPersona(Persona pers);
+    public void crearPersona (Persona per); //Tambien funciona como modificar/update
     
-    public void borrarPersona(Long id);
+    public void borrarPersona(Integer id);
     
-    public Persona buscarPersona(Long id); 
+    public Persona buscarPersona(Integer id);
+    
+    public Persona modificarPersona(Integer id, Persona per);
 }

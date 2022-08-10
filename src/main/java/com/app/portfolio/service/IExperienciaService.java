@@ -1,25 +1,19 @@
 
 package com.app.portfolio.service;
 
-import com.app.portfolio.entity.Experiencia;
+import com.app.portfolio.controller.model.Experiencia;
 import java.util.List;
-import java.util.Optional;
 
 public interface IExperienciaService {
     
-    public List<Experiencia> list();
+     //Experiencia: Carga lista de experiencias en el front
+    public List<Experiencia> verListaExperiencia();
     
-    public Optional<Experiencia> getOne(int id);
+    public void crearExperiencia (Experiencia exp); //Tambien funciona como modificar/update
     
-    public Optional<Experiencia> getByCargo(String cargo);
+    public void borrarExperiencia(Integer id);
     
-    public void save(Experiencia exp);
+    public Experiencia buscarExperiencia(Integer id);
     
-    public void delete(int id);
-    
-    public boolean existsById(int id);
-    
-    public boolean existsByCargo(String cargo);
-    
-    
+    public Experiencia modificarExperiencia(Integer id, Experiencia exp);
 }
