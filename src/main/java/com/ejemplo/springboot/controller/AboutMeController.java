@@ -46,14 +46,12 @@ public class AboutMeController {
         return "La persona fue creada correctamente!";
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("delete/{id}")
     public String borrarPersona(@PathVariable Long id){
         aboutmeServ.borrarPersona(id);
         return "La persona "+ id +" fue eliminada correctamente";
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("modificar/{id}")
     public AboutMe modificarPersona(@PathVariable Long id,
                                     @RequestParam ("descripcion") String nuevaDescripcion){    
