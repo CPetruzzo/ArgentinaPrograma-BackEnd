@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController 
 @RequestMapping("/info/")
-@CrossOrigin(origins="http://localhost:4200")
+@CrossOrigin(origins="https://porfolio-cf060.web.app")
 
 public class InfoController {
     @Autowired 

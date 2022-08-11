@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 @RequestMapping("/educacion")
-@CrossOrigin(origins="http://localhost:4200")
+@CrossOrigin(origins="https://porfolio-cf060.web.app")
 public class EducationController {
     
     
