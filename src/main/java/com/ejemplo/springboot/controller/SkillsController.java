@@ -52,13 +52,15 @@ public class SkillsController {
     public Skills modificarSkill(@PathVariable int id,
                                     @RequestParam String img,
                                     @RequestParam String skill, 
-                                    @RequestParam String descripcion){    
+                                    @RequestParam String descripcion,
+                                    @RequestParam int percent){    
         
         Skills skills  = skillServ.buscarSkill(id);
 
         skills.setImg(img);
         skills.setSkill(skill);
         skills.setDescripcion(descripcion);
+        skills.setPercent(percent);
         
         skillServ.modificarSkill(skills);
         return skills;

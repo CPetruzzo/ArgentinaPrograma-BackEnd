@@ -16,14 +16,16 @@ public class Skills {
     private String img;
     private String skill;
     private String descripcion;
+    private int percent;
 
     public Skills() {
     }
 
-    public Skills(String img, String skill, String descripcion) {
+    public Skills(String img, String skill, String descripcion, int percent) {
         this.img = img;
         this.skill = skill;
         this.descripcion = descripcion;
+        this.percent = percent;
     }
 
     public int getId() {
@@ -57,6 +59,15 @@ public class Skills {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+
+    public int getPercent() {
+        return percent;
+    }
+
+    public void setPercent(int percent) {
+        this.percent = percent;
+    }
+    
     
     
 }
