@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.ejemplo.springboot.service.IEducationService;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -27,6 +28,7 @@ public class EducationController {
     @Autowired
     private IEducationService persoServ;
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/new/educacion")
     public String agregarEducacion(@RequestBody Education pers){
         persoServ.crearEducacion(pers);
@@ -39,6 +41,7 @@ public class EducationController {
         return persoServ.verEducacion();
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/delete/{id}")
     public String borrarEducacion(@PathVariable int id){
         persoServ.borrarEducacion(id);
@@ -50,6 +53,7 @@ public class EducationController {
         return persoServ.buscarEducacion(id);
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/modificar/{id}")
     public Education modificarPersona(@PathVariable int id,
                                     @RequestParam String titulo,

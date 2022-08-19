@@ -30,6 +30,7 @@ public class InfoController {
         return infoServ.getInfo();
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("createInfo/")
     public String createInfo(@RequestBody Info informacion){
         infoServ.saveInfo(informacion);
@@ -41,6 +42,7 @@ public class InfoController {
         return infoServ.findInfo(id);
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("borrar/{id}/")
     public String borrarInfo(@PathVariable Long id){
         infoServ.deleteInfo(id);
@@ -48,6 +50,7 @@ public class InfoController {
     }
     
     // URL: PUERTO/editar/4/nombre&apellido&img
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("editar/{id}")
     public Info editarInfo(@PathVariable Long id, 
                             @RequestParam("nombre") String nuevoNombre,

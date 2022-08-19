@@ -5,6 +5,7 @@ import com.ejemplo.springboot.entity.Skills;
 import com.ejemplo.springboot.service.ISkillsService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,9 +23,10 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins="https://porfolio-cf060.web.app")
 public class SkillsController {
     
-     @Autowired
+    @Autowired
     private ISkillsService skillServ;
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/new")
     public String agregarEducacion(@RequestBody Skills skill){
         skillServ.crearSkill(skill);
@@ -37,6 +39,7 @@ public class SkillsController {
         return skillServ.verSkills();
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/delete/{id}")
     public String borrarSkill(@PathVariable int id){
         skillServ.borrarSkill(id);
@@ -48,6 +51,7 @@ public class SkillsController {
         return skillServ.buscarSkill(id);
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/modificar/{id}")
     public Skills modificarSkill(@PathVariable int id,
                                     @RequestParam String img,
