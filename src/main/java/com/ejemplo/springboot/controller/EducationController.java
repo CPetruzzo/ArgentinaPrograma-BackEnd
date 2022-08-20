@@ -30,9 +30,8 @@ public class EducationController {
     
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/new/educacion")
-    public String agregarEducacion(@RequestBody Education pers){
+    public void agregarEducacion(@RequestBody Education pers){
         persoServ.crearEducacion(pers);
-        return "La educacion fue creada correctamente!";
     }
     
     @GetMapping("/ver/educacion")
