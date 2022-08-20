@@ -28,9 +28,8 @@ public class SkillsController {
     
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/new")
-    public String agregarEducacion(@RequestBody Skills skill){
+    public void crearSkill(@RequestBody Skills skill){
         skillServ.crearSkill(skill);
-        return "La habilidad fue creada correctamente!";
     }
     
     @GetMapping("/ver")
@@ -41,9 +40,8 @@ public class SkillsController {
     
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/delete/{id}")
-    public String borrarSkill(@PathVariable int id){
+    public void borrarSkill(@PathVariable int id){
         skillServ.borrarSkill(id);
-        return "La habilidad fue eliminada correctamente";
     }
     
     @GetMapping("/ver/{id}")
